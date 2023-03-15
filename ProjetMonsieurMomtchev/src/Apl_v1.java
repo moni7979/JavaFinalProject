@@ -20,12 +20,14 @@ public class Apl_v1 extends JFrame {
     protected addStudent addStudent;
     protected ArrayList<Student> studentArrayList;
 
-    public Apl_v1(int x, int y, int length, int height) {
+
+    public Apl_v1() {
+
+        this.setTitle("Student's directory - version 1");
         this.setLayout(new BorderLayout());
-        this.setBounds(x, y, length, height);
+        this.setBounds(20, 20, 600, 400);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Student's directory - version 1");
         controlPanel = new JPanel(new FlowLayout());
         personPanel = new JPanel(new FlowLayout());
         button = new JButton("add");
@@ -46,7 +48,9 @@ public class Apl_v1 extends JFrame {
 
     class addStudent implements ActionListener {
 
+        @Override
         public void actionPerformed(ActionEvent e) {
+
             Student student;
             int note;
             String n = textFields[0].getText();
@@ -66,10 +70,13 @@ public class Apl_v1 extends JFrame {
             textFields[1].setText("note?");
             list.add("" + student);
             revalidate();
+
         }
     }
 
-//    public static void main(String[] arg) {
-//        new Apl_v1(20, 20, 400, 300);
-//    }
+
+
+    public static void main(String[] arg) {
+        new Apl_v1();
+    }
 }

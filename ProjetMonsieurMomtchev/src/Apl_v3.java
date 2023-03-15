@@ -1,19 +1,22 @@
 import java.awt.event.*;
 
 public class Apl_v3 extends Apl_v2 {
+
     private static final long serialVersionUID = 1L;
-    protected InName in_f;
-    protected InNote int_f;
+    protected InName inName;
+    protected InNote inNote;
 
 //    public static void main(String[] args) {
 //        new Apl_v3();
 //    }
 
     Apl_v3() {
-        textFields[0].addFocusListener(in_f = new InName());
-        textFields[1].addFocusListener(int_f = new InNote());
-        textFields[1].addActionListener(addStudent);
+
         this.setTitle("Student's directory - version 3");
+        textFields[0].addFocusListener(inName = new InName());
+        textFields[1].addFocusListener(inNote = new InNote());
+        textFields[1].addActionListener(addStudent);
+
     }
 
     class InName implements FocusListener {
