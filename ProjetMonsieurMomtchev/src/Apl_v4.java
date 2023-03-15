@@ -26,10 +26,10 @@ public class Apl_v4 extends Apl_v3 {
         chiffres1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tf[1].setText((String) chiffres1.getSelectedItem());
+                textFields[1].setText((String) chiffres1.getSelectedItem());
             }
         });
-        contr.add(chiffres1);
+        controlPanel.add(chiffres1);
 
 
         orderButton = new JButton("Order by note desc.");
@@ -38,7 +38,7 @@ public class Apl_v4 extends Apl_v3 {
         orderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                prs.sort(new Comparator<Student>() {
+                studentArrayList.sort(new Comparator<Student>() {
                     @Override
                     public int compare(Student o1, Student o2) {
                         int student1Note = o1.note;
@@ -53,9 +53,9 @@ public class Apl_v4 extends Apl_v3 {
 
                     }
                 });
-                lst.removeAll();
-                for (int i = 0; i < prs.size(); i++) {
-                    lst.add("" + prs.get(i));
+                list.removeAll();
+                for (int i = 0; i < studentArrayList.size(); i++) {
+                    list.add("" + studentArrayList.get(i));
                 }
                 revalidate();
             }
@@ -64,7 +64,7 @@ public class Apl_v4 extends Apl_v3 {
 
 
         message.setBounds(20, 20, 200, 20);
-        plst.add(message);
+        personPanel.add(message);
         revalidate();
 
 
@@ -82,32 +82,32 @@ public class Apl_v4 extends Apl_v3 {
 
 
         this.setTitle("Student's directory - version 4");
-        //contr.add(menuBar);
-        //contr.add(fileMenu);
-        contr.add(chiffres1);
-        contr.add(orderButton);
+        //controlPanel.add(menuBar);
+        //controlPanel.add(fileMenu);
+        controlPanel.add(chiffres1);
+        controlPanel.add(orderButton);
     }
 
-    public static void main(String[] args) {
-
-
-        String[] responses = {"La meilleure classe  à l'université",
-                "Ils ont besoin de plus d'exercices", "Ils doivent quitter l'université"};
-        String JOpane = (String) JOptionPane.showInputDialog(null,
-                "Choisir le commentaire",
-                "Commentaire sur les resultats",
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                responses,
-                responses[0]);
-
-        if (JOpane == null) {
-            message.setVisible(false);
-        } else {
-            message.setText(JOpane);
-            message.setVisible(true);
-        }
-        new Apl_v4();
-
-    }
+//    public static void main(String[] args) {
+//
+//
+//        String[] responses = {"La meilleure classe  à l'université",
+//                "Ils ont besoin de plus d'exercices", "Ils doivent quitter l'université"};
+//        String JOpane = (String) JOptionPane.showInputDialog(null,
+//                "Choisir le commentaire",
+//                "Commentaire sur les resultats",
+//                JOptionPane.QUESTION_MESSAGE,
+//                null,
+//                responses,
+//                responses[0]);
+//
+//        if (JOpane == null) {
+//            message.setVisible(false);
+//        } else {
+//            message.setText(JOpane);
+//            message.setVisible(true);
+//        }
+//        new Apl_v4();
+//
+//    }
 }
