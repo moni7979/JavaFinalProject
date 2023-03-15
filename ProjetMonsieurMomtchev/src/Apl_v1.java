@@ -16,8 +16,7 @@ public class Apl_v1 extends JFrame {
     protected JButton button;
     protected JTextField[] textFields = new JTextField[2];
     protected List list;
-    protected JPanel controlPanel;
-    protected JPanel personPanel;
+    protected JPanel controlPanel, personPanel;
     protected addStudent addStudent;
     protected ArrayList<Student> studentArrayList;
 

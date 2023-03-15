@@ -5,19 +5,21 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Apl_v2 extends Apl_v1 {
+
     private static final long serialVersionUID = 1L;
-    protected JButton load, save;
+    protected JButton loadButton, saveButton;
     protected Load ld;
     protected Save sv;
 
     Apl_v2() {
+
         super(20, 20, 500, 250);
-        load = new JButton("load");
-        load.addActionListener(ld = new Load());
-        controlPanel.add(load);
-        save = new JButton("save");
-        save.addActionListener(sv = new Save());
-        controlPanel.add(save);
+        loadButton = new JButton("loadButton");
+        loadButton.addActionListener(ld = new Load());
+        controlPanel.add(loadButton);
+        saveButton = new JButton("saveButton");
+        saveButton.addActionListener(sv = new Save());
+        controlPanel.add(saveButton);
         setTitle("Student's directory - version 2");
         revalidate();
     }
@@ -31,7 +33,7 @@ public class Apl_v2 extends Apl_v1 {
             ObjectOutputStream oos = null;
             try {
                 oos = new ObjectOutputStream(
-                        new FileOutputStream("save.ser"));
+                        new FileOutputStream("saveButton.ser"));
                 oos.writeObject(studentArrayList);
             } catch (IOException ex) {
                 System.out.println(ex);
@@ -48,7 +50,7 @@ public class Apl_v2 extends Apl_v1 {
         public void actionPerformed(ActionEvent e) {
             ObjectInputStream ios = null;
             try {
-                ios = new ObjectInputStream(new FileInputStream("save.ser"));
+                ios = new ObjectInputStream(new FileInputStream("saveButton.ser"));
                 studentArrayList = (ArrayList<Student>) ios.readObject();
             } catch (Exception ex) {
                 textFields[0].setText("Error");

@@ -70,15 +70,15 @@ public class Apl_v4 extends Apl_v3 {
 
         menuBar = new JMenuBar();
         fileMenu = new JMenu("File");
-        fileMenu.add(load);
-        fileMenu.add(save);
+        fileMenu.add(loadButton);
+        fileMenu.add(saveButton);
         menuBar.add(fileMenu);
         this.setJMenuBar(menuBar);
         this.setVisible(true);
         Icon saveIcon = new ImageIcon("saveIcon.png");
         Icon uploadIcon = new ImageIcon("uploadIcon.png");
-        save.setIcon(saveIcon);
-        load.setIcon(uploadIcon);
+        saveButton.setIcon(saveIcon);
+        loadButton.setIcon(uploadIcon);
 
 
         this.setTitle("Student's directory - version 4");
