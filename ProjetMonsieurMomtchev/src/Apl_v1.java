@@ -7,6 +7,10 @@ import java.awt.event.*;
 
 import java.util.ArrayList;
 
+/**
+ * А class from professor
+ */
+
 public class Apl_v1 extends JFrame{
     private static final long serialVersionUID = 1L;
     protected JButton ad;
